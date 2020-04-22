@@ -4,6 +4,7 @@ const timeLeft = document.querySelector('#time-left');
 let score = document.querySelector('#score');
 
 let result = 0;
+const unit = result === 1 ? 'pt' : 'pts';
 let currentTime = timeLeft.textContent;
 
 function move(val){
@@ -32,7 +33,7 @@ square.forEach(id => {
         console.log(id);
         if(id.id === hitPosition){
             result = result + 1;
-            score.textContent = `${result} pts`;
+            score.textContent = `${result} ${unit}`;
             score.style.color = '#34bd7c';
         }
     })
@@ -51,7 +52,7 @@ function countDown(){
 
     if(currentTime === 0){
         clearInterval(timerId);
-        alert('GAME OVER! Your final score is ' + result+ 'pts');
+        alert('GAME OVER! Your final score is ' + result + unit);
         result = 0;
     }
 }
