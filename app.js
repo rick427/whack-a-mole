@@ -2,6 +2,8 @@ const square = document.querySelectorAll('.square');
 const mole = document.querySelectorAll('.mole');
 const timeLeft = document.querySelector('#time-left');
 let score = document.querySelector('#score');
+const emoji = document.querySelector('#emoji');
+const scoreEmoji = document.querySelector('#scoreEmoji');
 
 let result = 0;
 const unit = result == 1 ? 'pt' : 'pts';
@@ -10,7 +12,7 @@ let currentTime = timeLeft.textContent;
 function move(val){
     if(val == 'easy') return 1500;
     if(val == 'medium') return 1000;
-    if(val == 'hard') return 500;
+    if(val == 'hard') return 700;
     if(val == 'mas') return 50;
     if(val == '') return 1500;
 }
@@ -41,7 +43,7 @@ square.forEach(id => {
 
 function moveMole(){
     let timerId = null;
-    timerId = setInterval(randomSquare, move('easy'));
+    timerId = setInterval(randomSquare, move('hard'));
 }
 
 moveMole()
@@ -50,10 +52,31 @@ function countDown(){
     currentTime--
     timeLeft.textContent = currentTime;
 
+    if(currentTime === 50) emoji.innerHTML = '&#128577;';
+    if(currentTime === 40) emoji.innerHTML = '&#128580;';
+    if(currentTime === 30) emoji.innerHTML = '&#128562;';
+    if(currentTime === 20) emoji.innerHTML = '&#128560;';
+    if(currentTime === 10) emoji.innerHTML = '&#128561;';
+    if(currentTime === 5) emoji.innerHTML = '&#129324;';
     if(currentTime === 0){
         clearInterval(timerId);
-        alert(`GAME OVER! Your final score is ${result} ${unit}`);
+        alert(`GAME OVER! Your final score is ${result} ${unit} 🤣`);
         result = 0;
+    }
+    if(result == 5){
+        scoreEmoji.innerHTML = '&#128527;'
+    }
+    if(result == 2){
+        scoreEmoji.innerHTML = '&#129319;'
+    }
+    if(result == 10){
+        scoreEmoji.innerHTML = '&#128515;'
+    }
+    if(result == 15){
+        scoreEmoji.innerHTML = '&#128527;'
+    }
+    if(result >= 25){
+        scoreEmoji.innerHTML = '&#128526;'
     }
 }
 
