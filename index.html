@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-A-Mole</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Whack-A-Mole !!</h1>
+        <button class="btn" onclick="restart()">restart</button>
+
+        <div class="flex expand">
+            <h2 class="high">High Score: </h2>
+            <h2 class="high">60 pts</h2>
+            <p class="high">-- By Kirigaya</p>
+        </div>
+
+        <p>Don't know how to play? Really ? Just whack the mole as if you're chewing pomor</p>
+
+        <div class="flex">
+            <h2>Your Score: </h2>
+            <h2 id=score>0</h2>
+        </div>
+    
+        <div class="flex">
+            <h2>Time left:</h2>
+            <h2 id="time-left">60</h2>
+        </div>
+    
+        <div class="grid">
+            <div class="square mole" id="1"></div>
+            <div class="square" id="2"></div>
+            <div class="square" id="3"></div>
+            <div class="square" id="4"></div>
+            <div class="square" id="5"></div>
+            <div class="square" id="6"></div>
+            <div class="square" id="7"></div>
+            <div class="square" id="8"></div>
+            <div class="square" id="9"></div>
+            <div class="square" id="10"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
