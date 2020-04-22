@@ -60,7 +60,7 @@ function countDown(){
     if(currentTime === 5) emoji.innerHTML = '&#129324;';
     if(currentTime === 0){
         clearInterval(timerId);
-        alert(`GAME OVER! Your final score = ${result} ${unit} 🤣. Boss Kirigaya remains unbeatable 😎.`);
+        alert(`GAME OVER! Your final score = ${result} ${unit} 🤣. \n Boss Kirigaya remains unbeatable 😎.`);
         result = 0;
     }
     if(result == 5){
