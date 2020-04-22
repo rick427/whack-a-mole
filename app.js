@@ -4,7 +4,7 @@ const timeLeft = document.querySelector('#time-left');
 let score = document.querySelector('#score');
 
 let result = 0;
-const unit = result === 1 ? 'pt' : 'pts';
+const unit = result == 1 ? 'pt' : 'pts';
 let currentTime = timeLeft.textContent;
 
 function move(val){
@@ -41,7 +41,7 @@ square.forEach(id => {
 
 function moveMole(){
     let timerId = null;
-    timerId = setInterval(randomSquare, move('hard'));
+    timerId = setInterval(randomSquare, move('easy'));
 }
 
 moveMole()
@@ -52,7 +52,7 @@ function countDown(){
 
     if(currentTime === 0){
         clearInterval(timerId);
-        alert('GAME OVER! Your final score is ' + result + unit);
+        alert(`GAME OVER! Your final score is ${result} ${unit}`);
         result = 0;
     }
 }
