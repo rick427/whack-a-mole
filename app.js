@@ -20,7 +20,7 @@ function randomSquare (){
         className.classList.remove('mole');
     });
 
-    let randomPosition = square[Math.floor(Math.random() * 10)];
+    let randomPosition = square[Math.floor(Math.random() * 12)];
     randomPosition.classList.add('mole');
 
     //pass random position id to hit position
