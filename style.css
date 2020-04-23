@@ -116,6 +116,7 @@ h2{
     width: 500px;
     height: 500px;
     margin-bottom: 1rem;
+    box-shadow: 0 8px 6px -6px #ccc;
 }
 
 @media screen and (max-width: 500px){

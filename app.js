@@ -43,7 +43,7 @@ square.forEach(id => {
 
 function moveMole(){
     let timerId = null;
-    timerId = setInterval(randomSquare, move('hard'));
+    timerId = setInterval(randomSquare, move('easy'));
 }
 
 moveMole()
@@ -57,12 +57,7 @@ function countDown(){
     if(currentTime === 30) emoji.innerHTML = '&#128562;';
     if(currentTime === 20) emoji.innerHTML = '&#128560;';
     if(currentTime === 10) emoji.innerHTML = '&#128561;';
-    if(currentTime === 5) emoji.innerHTML = '&#129324;';
-    if(currentTime === 0){
-        clearInterval(timerId);
-        alert(`GAME OVER!\n Your final score = ${result} ${unit} 🤣. \n Boss Kirigaya remains unbeatable 😎.`);
-        result = 0;
-    }
+    if(currentTime === 5) emoji.innerHTML = '&#128557;';
     if(result == 5){
         scoreEmoji.innerHTML = '&#128527;'
     }
@@ -77,6 +72,15 @@ function countDown(){
     }
     if(result >= 25){
         scoreEmoji.innerHTML = '&#128526;'
+    }
+    if(currentTime === 0 && result > 97){
+        clearInterval(timerId);
+        alert(`GAME OVER!\nYour final score = ${result} ${unit} 🤣. \nWOW, you actually beat my highscore..😎.\nTake a screenshot of this alert and send it to the developer to claim your prize.`);
+    }
+    else if(currentTime === 0 && result < 97){
+        clearInterval(timerId);
+        alert(`GAME OVER!\nYour final score = ${result} ${unit} 🤣. \nBoss Kirigaya remains UNBEATABLE !! 😎.`);
+        result = 0;
     }
 }
 
