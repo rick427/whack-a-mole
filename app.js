@@ -12,7 +12,7 @@ let currentTime = timeLeft.textContent;
 function move(val){
     if(val == 'easy') return 1500;
     if(val == 'medium') return 1000;
-    if(val == 'hard') return 400;
+    if(val == 'hard') return 500;
     if(val == 'mas') return 50;
     if(val == '') return 1500;
 }
