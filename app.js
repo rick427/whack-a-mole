@@ -73,11 +73,11 @@ function countDown(){
     if(result >= 25){
         scoreEmoji.innerHTML = '&#128526;'
     }
-    if(currentTime === 0 && result > 97){
+    if(currentTime === 0 && result > 102){
         clearInterval(timerId);
         alert(`GAME OVER!\nYour final score = ${result} ${unit} 🤣. \nWOW, you actually beat my highscore..😎.\nTake a screenshot of this alert and send it to the developer to claim your prize.`);
     }
-    else if(currentTime === 0 && result < 97){
+    else if(currentTime === 0 && result < 102){
         clearInterval(timerId);
         alert(`GAME OVER!\nYour final score = ${result} ${unit} 🤣. \nBoss Kirigaya remains UNBEATABLE !! 😎.`);
         result = 0;
